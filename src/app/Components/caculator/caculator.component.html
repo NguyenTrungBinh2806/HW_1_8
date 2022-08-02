@@ -1,0 +1,63 @@
+<h1>Calculator Design Using HTML Layout</h1>
+<div class="container">
+  <div class="header">Calculator</div>
+  <div class="result">
+    {{ result }} {{ this.CaculatorService.currentOperator }}
+    {{
+      this.CaculatorService.currentInput != 0
+        ? this.CaculatorService.currentInput
+        : ""
+    }}
+  </div>
+  <div class="first-row">
+    <button name="" class="global red" (click)="Delete()">Clear</button>
+    <button name="" value="(" class="global" (click)="pressNum('(')">(</button>
+    <button name="" value=")" class="global" (click)="pressNum(')')">)</button>
+    <button name="" value="%" class="global" (click)="pressNum('%')">%</button>
+  </div>
+  <div class="second-row">
+    <button name="" value="7" class="global" (click)="pressNum('7')">7</button>
+    <button name="" value="8" class="global" (click)="pressNum('8')">8</button>
+    <button name="" value="9" class="global" (click)="pressNum('9')">9</button>
+    <button name="" value="/" class="global" (click)="pressNum('/')">/</button>
+  </div>
+  <div class="third-row">
+    <button name="" value="4" class="global" (click)="pressNum('4')">4</button>
+    <button name="" value="5" class="global" (click)="pressNum('5')">5</button>
+    <button name="" value="6" class="global" (click)="pressNum('6')">6</button>
+    <button name="" value="X" class="global" (click)="pressNum('*')">X</button>
+  </div>
+  <div class="fourth-row">
+    <button name="" value="1" class="global" (click)="pressNum('1')">1</button>
+    <button name="" value="2" class="global" (click)="pressNum('2')">2</button>
+    <button name="" value="3" class="global" (click)="pressNum('3')">3</button>
+    <button name="" value="-" class="global" (click)="pressNum('-')">-</button>
+  </div>
+  <div class="conflict">
+    <div class="left">
+      <button name="" value="0" class="big" (click)="pressNum('0')">0</button>
+      <button name="" value="." class="small" (click)="pressNum('.')">.</button>
+      <button name="" value="Del" class="red small white-text top-margin">
+        Del
+      </button>
+      <button
+        name=""
+        value="="
+        class="green white-text big top-margin"
+        (click)="pressNum('=')"
+      >
+        =
+      </button>
+    </div>
+    <div class="right">
+      <button
+        name=""
+        value="+"
+        class="global grey plus"
+        (click)="pressNum('+')"
+      >
+        +
+      </button>
+    </div>
+  </div>
+</div>
